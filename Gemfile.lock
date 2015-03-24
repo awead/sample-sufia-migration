@@ -111,6 +111,7 @@ GEM
     autoprefixer-rails (5.1.7.1)
       execjs
       json
+    bcrypt (3.1.10)
     blacklight (5.9.4)
       bootstrap-sass (~> 3.2)
       deprecation
@@ -164,6 +165,16 @@ GEM
     daemons (1.2.2)
     deprecation (0.2.2)
       activesupport
+    devise (3.4.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
+    devise-guests (0.3.3)
+      devise
+    diff-lcs (1.2.5)
     domain_name (0.5.23)
       unf (>= 0.0.5, < 1.0.0)
     dropbox-sdk (1.6.4)
@@ -345,6 +356,7 @@ GEM
       solrizer (~> 3.3)
     openseadragon (0.2.0)
       rails (> 3.2.0)
+    orm_adapter (0.5.0)
     parslet (1.7.0)
       blankslate (>= 2.0, <= 4.0)
     rack (1.5.2)
@@ -417,6 +429,8 @@ GEM
     redis-namespace (1.5.1)
       redis (~> 3.0, >= 3.0.4)
     ref (1.0.5)
+    responders (1.1.2)
+      railties (>= 3.2, < 4.2)
     resque (1.25.2)
       mono_logger (~> 1.0)
       multi_json (~> 1.0)
@@ -434,6 +448,23 @@ GEM
     retriable (1.4.1)
     rsolr (1.0.12)
       builder (>= 2.1.2)
+    rspec-core (3.2.2)
+      rspec-support (~> 3.2.0)
+    rspec-expectations (3.2.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-mocks (3.2.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-rails (3.2.1)
+      actionpack (>= 3.0, < 4.3)
+      activesupport (>= 3.0, < 4.3)
+      railties (>= 3.0, < 4.3)
+      rspec-core (~> 3.2.0)
+      rspec-expectations (~> 3.2.0)
+      rspec-mocks (~> 3.2.0)
+      rspec-support (~> 3.2.0)
+    rspec-support (3.2.2)
     ruby-box (1.15.0)
       addressable
       json
@@ -528,6 +559,8 @@ GEM
     unf_ext (0.0.6)
     vegas (0.1.11)
       rack (>= 1.0.0)
+    warden (1.2.3)
+      rack (>= 1.0)
     xml-simple (1.1.5)
     yaml_db (0.3.0)
       rails (>= 3.0, < 4.3)
@@ -539,9 +572,13 @@ PLATFORMS
 DEPENDENCIES
   blacklight (< 5.10)
   coffee-rails (~> 4.0.0)
+  devise
+  devise-guests (~> 0.3)
+  jettywrapper
   jquery-rails
   kaminari!
   rails (= 4.1.10)
+  rspec-rails
   sass-rails (~> 4.0.3)
   sqlite3
   sufia!
